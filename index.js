@@ -12,7 +12,14 @@ const myFunc = async (searchText) => {
 const displyCard = (phones) => {
 
     const phoneContainer = document.getElementById('amarid');
-    phoneContainer.textContent=""
+    phoneContainer.textContent="";
+     const callany = document.getElementById("viewall")
+    if (phones.length > 12) {
+        callany.classList.remove("hidden");
+    }else{
+        callany.classList.add("hidden");
+    }
+    phones=phones.slice(0,12)
   phones.forEach((element) => {
     console.log(element);
     const phoneCards =document.createElement("div");

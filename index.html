@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>API hunting phone</title>
-    
-<link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-    body{
-        background-color: #000;
-    }
-</style>
-</head>
-<body>
-    
-        <header>
-            
 
-        </header>
-        <main class="container mx-auto pt-6 pb-6">
-
-            <section class="bg-gray-300 p-6 rounded-xl mb-6 text-end">
-                <input id="myinput" type="text" placeholder="Search here" class="input input-bordered w-full max-w-xs" />
-                <button id="mybtn" onclick="buttonhandeler()" class="btn btn-warning">Search</button>
-            </section>
-            <section>
-                <div id="amarid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
-                    
-                </div>
-
-            </section>
-        </main>
-        <footer>
-
-        </footer>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
    
+  </head>
+  <body>
+    <header></header>
+    <main class="container mx-auto pt-6 pb-6">
+      <section class="bg-gray-300 p-6 rounded-xl mb-6 flex justify-between">
+        <div class="flex">
+            <input
+          id="myinput"
+          type="text"
+          placeholder="Search here"
+          class="input input-bordered w-full max-w-xs mr-2"
+        />
+        <button id="mybtn" onclick="buttonhandeler()" class="btn btn-warning">
+          Search
+        </button>
+        </div>
 
-
-
+        <div id="viewall" class="hidden">
+            <button  class="btn btn-outline btn-primary">Primary</button>
+        </div>
+      </section>
+      <section>
+        <div
+          id="amarid"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20"
+        ></div>
+      </section>
+    </main>
+    <footer></footer>
 
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>
