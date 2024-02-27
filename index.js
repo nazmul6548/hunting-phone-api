@@ -15,12 +15,13 @@ const displyCard = (phones) => {
   phones.forEach((element) => {
     console.log(element);
     const phoneCards =document.createElement("div");
-    phoneCards.className = `card w-96 bg-base-100 shadow-xl`;
+    phoneCards.className = `card p-4 bg-base-100 shadow-xl`;
     phoneCards.innerHTML =`
     <figure><img src="${element.image}" alt="Shoes" /></figure>
     <div class="card-body">
-      <h2 class="card-title">Shoes!</h2>
-      <p>If a dog chews shoes whose shoes does he choose?</p>
+    <h1 class=text-4xl>${element.brand}</h1>
+      <h2 class="card-title">${element.phone_name}</h2>
+      <p>${element.slug}</p>
       <div class="card-actions justify-end">
         <button class="btn btn-primary">Buy Now</button>
       </div>
