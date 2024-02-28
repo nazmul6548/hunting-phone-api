@@ -89,12 +89,6 @@ my_modal_5.showModal()
 
 
 
-
-
-
-
-
-
 // handle button click
 const buttonhandeler = (isshowall) => {
     // console.log("search");

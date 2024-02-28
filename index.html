@@ -13,37 +13,60 @@
     <script src="https://cdn.tailwindcss.com"></script>
    
   </head>
+  <!-- heads end -->
+  <!-- body start -->
   <body class="bg-black">
+    <!-- ei khane body te ami akta bg color add korci -->
     <header></header>
+    <!-- amar ei project e header er kono kaj nai -->
+
+    <!-- main jinis start -->
     <main class="container mx-auto pt-6 pb-6">
+      <!-- upore ami ekta container use korcci -->
+
+      <!-- nc alada ekta section nc -->
       <section class="bg-gray-300 p-6 rounded-xl mb-6 flex justify-between ">
+        <!-- nc input nc -->
         <div class="flex">
             <input
-          id="myinput"
-          type="text"
-          placeholder="Search here"
-          class="input input-bordered w-full max-w-xs mr-2"
-        />
-        <button id="mybtn" onclick="buttonhandeler()" class="btn btn-warning">
-          Search
-        </button>
+             id="myinput"
+             type="text"
+             placeholder="Search here"
+             class="input input-bordered w-full max-w-xs mr-2"
+            />
+            <!-- ei khane input ses -->
+            <!-- nc button nilam -->
+           <button id="mybtn" onclick="buttonhandeler()" class="btn btn-warning">
+              Search
+           </button>
+           <!-- ei khane button ses -->
         </div>
 
         
       </section>
+    <!-- uporer section ses -->
+
+    <!-- arekta section start -->
       <section>
+        <!-- nc loading er jonne dasiy ui theke collect korci -->
         <div id="lodingspine" class="text-center my-52 hidden">
             <span class="loading loading-infinity loading-lg text-amber-600"></span>
         </div>
+        <!-- loading div ses -->
+
+        <!-- nc o daisy ui theke akta card nc ja amra pore js dia dynamic korci ei jonno besir vag code js file e cole gc ei khane sodu class gulo ace. -->
         <div
           id="amarid"
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20"
         ></div>
-        
+        <!-- ses -->
+        <!-- nc sob items show koranor jonno amra ekta button nc -->
         <div id="viewall" class="hidden mt-10 flex items-center justify-center">
           <button class="btn btn-outline btn-primary text-white font-bold" onclick="showallelement()">Show All</button>
       </div>
+      <!-- ei khane button div ses -->
         <section>
+
           <!-- Open the modal using ID.showModal() method -->
         
 <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle ">
@@ -66,6 +89,7 @@
     </div>
   </div>
 </dialog>
+<!-- uporer sob gulo code modal er jonno likha ja daisy ui theke nea hyce -->
         </section>
         
       </section>
@@ -73,5 +97,6 @@
     <footer></footer>
 
     <script src="./index.js"></script>
+    <script src="./practice.js"></script>
   </body>
 </html>
