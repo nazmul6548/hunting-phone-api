@@ -1,4 +1,4 @@
-const myFunc = async (searchText=13,isshowall) => {
+const myFunc = async (searchText,isshowall) => {
   let myLink = await fetch(
     `https://openapi.programming-hero.com/api/phones?search=${searchText}`
   );
@@ -25,7 +25,7 @@ const displyCard = (phones,isshowall) => {
         phones=phones.slice(0,12);
     }
   phones.forEach((element) => {
-    console.log(element);
+    // console.log(element);
     const phoneCards =document.createElement("div");
   
     phoneCards.className = `card p-4 bg-base-100 shadow-xl`;
@@ -50,12 +50,39 @@ const displyCard = (phones,isshowall) => {
 const handleshowdetails = async (id) => {
 const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
 const data = await res.json();
-console.log(data);
+const phone =data.data;
 showPhoneDetails(data)
 }
 
 const showPhoneDetails = (phone) => {
-  my_modal_5.showModal()
+  console.log(phone);
+ const alldetails = document.getElementById('show-details-container');
+ alldetails.innerHTML=`
+ <img src="${phone.data.image}" alt="">
+`
+const phoneName = document.getElementById('show_detail_phone');
+ phoneName.innerText =phone.data.name;
+ const phoneStorage = document.getElementById('show-storage');
+ phoneStorage.innerText =`
+ Storage : ${phone.data.mainFeatures
+  .storage}`;
+const displySize =document.getElementById('disply-size');
+displySize.innerText =`
+Disply : ${phone.data.mainFeatures
+  .displaySize}`;
+const relesDate = document.getElementById('releaseDate');
+relesDate.innerText =`
+release : ${phone.data.releaseDate}`;
+const chipSetNames =document.getElementById('chipSetName');
+chipSetNames.innerText =`
+slug : ${phone.data.mainFeatures.chipSet}
+`
+const gps = document.getElementById('GPSid');
+gps.innerText =`
+GPS : ${phone?.data?.others?.GPS || "have not GPS"}
+`;
+my_modal_5.showModal()
+
 };
 
 
@@ -74,7 +101,7 @@ const buttonhandeler = (isshowall) => {
     loadingSpineName(true);
     const search = document.getElementById('myinput');
     const searchText = search.value;
-    search.value="";
+    // search.value="";
     
     // console.log(searchText);
     myFunc(searchText,isshowall);
@@ -92,4 +119,4 @@ const loadingSpineName = (loading) => {
 const showallelement = () => {
   buttonhandeler(true)
 };
-myFunc();
+// myFunc();

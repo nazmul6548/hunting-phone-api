@@ -29,7 +29,9 @@
         </button>
         </div>
 
-        
+        <div id="viewall" class="hidden">
+          <button class="btn btn-outline btn-primary" onclick="showallelement()">Show All</button>
+      </div>
       </section>
       <section>
         <div id="lodingspine" class="text-center my-52 hidden">
@@ -39,18 +41,24 @@
           id="amarid"
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20"
         ></div>
-        <div id="viewall" class="hidden">
-            <button class="btn btn-outline btn-primary" onclick="showallelement()">Show All</button>
-        </div>
+        
 
         <section>
           <!-- Open the modal using ID.showModal() method -->
         
 <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box">
-    <h3 class="font-bold text-lg">Hello!</h3>
-    <p class="py-4">Press ESC key or click the button below to close</p>
-    <div class="modal-action">
+  <div class="modal-box bg-purple-500 text-white">
+    <div id="show-details-container" class="flex justify-center flex-col items-center pb-10">
+    
+    </div>
+    <h3 id="show_detail_phone" class="font-bold text-3xl text-center"></h3>
+    <p id="show-storage" class="py-4 text-center"></p>
+    <p id="disply-size" class="text-center"></p>
+    <p id="releaseDate" class="text-center"></p>
+    <p  id="chipSetName" class="text-center"></p>
+    <p id="GPSid" class="text-center"></p>
+  
+    <div class="modal-action flex justify-center">
       <form method="dialog">
         <!-- if there is a button in form, it will close the modal -->
         <button class="btn">Close</button>
