@@ -1,4 +1,4 @@
-const myFunc = async (searchText,isshowall) => {
+const myFunc = async (searchText=13,isshowall) => {
   let myLink = await fetch(
     `https://openapi.programming-hero.com/api/phones?search=${searchText}`
   );
@@ -14,11 +14,11 @@ const displyCard = (phones,isshowall) => {
     const phoneContainer = document.getElementById('amarid');
     phoneContainer.textContent="";
     // 
-     const callany = document.getElementById("viewall")
+     const viewAllBtn = document.getElementById("viewall")
     if (phones.length > 12 && !isshowall) {
-        callany.classList.remove("hidden");
+        viewAllBtn.classList.remove("hidden");
     }else{
-        callany.classList.add("hidden");
+        viewAllBtn.classList.add("hidden");
     }
     
     if (!isshowall) {
@@ -36,7 +36,7 @@ const displyCard = (phones,isshowall) => {
       <h2 class="card-title">${element.phone_name}</h2>
       <p class="text-center">${element.slug}</p>
       <div class="card-actions justify-center">
-        <button onclick="handleshowdetails('${element.slug}')" class="btn btn-primary">Show Details</button>
+        <button onclick="handleshowdetails('${element.slug}'); my_modal_5.showModal()"  class="btn btn-primary">Show Details</button>
       </div>
     </div>
     `
@@ -51,9 +51,12 @@ const handleshowdetails = async (id) => {
 const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
 const data = await res.json();
 console.log(data);
+showPhoneDetails(data)
 }
 
-
+const showPhoneDetails = (phone) => {
+  my_modal_5.showModal()
+};
 
 
 
@@ -77,16 +80,16 @@ const buttonhandeler = (isshowall) => {
     myFunc(searchText,isshowall);
 };
 
-// myFunc();
 const loadingSpineName = (loading) => {
-    const loaderid = document.getElementById('lodingspine');
-    if (loading) {
-        loaderid.classList.remove("hidden");
-    }else{
-        loaderid.classList.add("hidden");
-    }
-
+  const loaderid = document.getElementById('lodingspine');
+  if (loading) {
+    loaderid.classList.remove("hidden");
+  }else{
+    loaderid.classList.add("hidden");
+  }
+  
 }
 const showallelement = () => {
-    buttonhandeler(true)
+  buttonhandeler(true)
 };
+myFunc();
